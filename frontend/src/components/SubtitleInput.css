@@ -1,0 +1,121 @@
+
+.subtitle-input {
+    margin: 0px 20px;
+    background-color: #1B2936;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 70%;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .subtitle-textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 100%;
+    height: 50px;
+    background-color: #151C27;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+
+.time-inputs-container{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0px;
+}
+
+.time-inputs{
+  height: 20px;
+  width: 20px;
+  border: none;
+  padding: 5px;
+  background-color: #151C27;
+  color: white;
+}
+.sep{
+  margin: 0px 10px;
+}
+
+.submit-button-container{
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+ 
+}
+  
+
+.add-button{
+  padding: 10px;
+  background-color: #212020;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+}
+.add-button:hover{
+  cursor: pointer;
+  background-color: #3d3d3d;
+}
+
+
+.submit-button{
+  padding: 10px;
+  border: 2px solid #47A0B4;
+  color: white;
+  background-color: #1B2936 ;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+}
+
+.submit-button:hover{
+
+  cursor: pointer;
+  background-color: #47A0B4;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+/* Style for the confirmation dialog */
+.confirmation-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-dialog p {
+  margin-bottom: 20px;
+}
+
+.confirmation-dialog button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmation-dialog button.cancel {
+  background-color: #f44336;
+  margin-left: 10px;
+}

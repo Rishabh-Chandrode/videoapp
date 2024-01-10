@@ -1,0 +1,39 @@
+/* src/components/VideoUploader.css */
+.video-uploader {
+  margin: 0px 20px;
+  width: 30%;
+  color: white;
+}
+
+.dropzone {
+  border: 2px dashed black;
+  background-color: #d1d1d1;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone-container{
+  padding: 5px;
+}
+
+.dropzone p {
+  margin: 0;
+}
+
+
+.video-upload-button {
+  padding: 10px;
+  border: 2px solid #47A0B4;
+  color: white;
+  background-color: #1B2936;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+}
+
+.video-upload-button:hover {
+
+  cursor: pointer;
+  background-color: #47A0B4;
+}

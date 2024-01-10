@@ -1,0 +1,15 @@
+.VideoList{
+    color: white;
+}
+.video-item{
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 2px;
+    background-color: #1B2936;
+    border-radius: 10px; 
+    margin: 10px 0px;
+}
+
+.video-item:hover{
+    cursor: pointer;
+}

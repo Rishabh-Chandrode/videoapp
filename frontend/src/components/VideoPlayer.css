@@ -1,0 +1,14 @@
+.video-player {
+  width: 100%;
+  /* padding: 10px 50px; */
+  box-sizing: border-box;
+ 
+}
+
+.react-player {
+  width: 100% !important;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
