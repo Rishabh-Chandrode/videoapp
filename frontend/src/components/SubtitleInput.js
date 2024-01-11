@@ -13,27 +13,47 @@ const SubtitleInput = ({docId, videoFileUrl, subtitleFileUrl, subtitles, addSubt
   const [endminutes, setEndminutes] = useState('');
   const [endseconds, setEndseconds] = useState('');
   
-
-
+  function validatetime(time){
+      let t = parseFloat(time);
+      if(t<=60 && t>=0 ) return true;
+      else return false;
+  }
 
   const handleAddSubtitle = () => {
 
     let sh = starthours||"0";
+    
     let sm = startminutes||"0";
+    if(!validatetime(sm)){
+      alert("invalid start minutes");
+      return;
+    }
     let ss = startseconds||"0";
+    if(!validatetime(ss)){
+      alert("invalid start seconds");
+      return;
+    }
     let eh = endhours||"0";
     let em = endminutes||"0";
+    if(!validatetime(em)){
+      alert("invalid end minutes");
+      return;
+    }
     let es = endseconds||"0";
+    if(!validatetime(es)){
+      alert("invalid end seconds");
+      return;
+    }
 
     let newsubtitle;
     let newsubtitleStartTime = parseFloat(sh)*3600;
     newsubtitleStartTime = newsubtitleStartTime + parseFloat(sm)*60;
     newsubtitleStartTime = newsubtitleStartTime+ parseFloat(ss);
-    console.log(newsubtitleStartTime);
+    
     let newsubtitleEndTime = parseFloat(eh)*3600;
     newsubtitleEndTime += parseFloat(em)*60;
     newsubtitleEndTime += parseFloat(es);
-    console.log(newsubtitleEndTime)
+    
 
     let newsubtitletext = subtitleText;
      newsubtitle = {
@@ -78,11 +98,11 @@ const SubtitleInput = ({docId, videoFileUrl, subtitleFileUrl, subtitles, addSubt
           subtitles,
         }),
       })
-      console.log(response)
+     
 
       if (response.ok) {
         
-        console.log('Subtitles successfully submitted to the backend');
+        // console.log('Subtitles successfully submitted to the backend');
        
         setSubtitleFileUrl(response.downloadUrl);
         
@@ -119,22 +139,26 @@ const SubtitleInput = ({docId, videoFileUrl, subtitleFileUrl, subtitles, addSubt
             
             value={starthours}
             onChange={(e) => setStarthours(e.target.value)}
-            placeholder="01"
+            placeholder="1"
             className='starttime-input-item time-inputs'
           />:
           <input
             type="number"
+            max={60}
+            min={0}
             value={startminutes}
             onChange={(e) => setStartminutes(e.target.value)}
-            placeholder="05"
+            placeholder="5"
             className='starttime-input-item time-inputs'
           />:
 
           <input
             type="number"
+            max={60}
+            min={0}
             value={startseconds}
             onChange={(e) => setStartseconds(e.target.value)}
-            placeholder="02"
+            placeholder="2"
             className='starttime-input-item time-inputs'
           />
         </div>
@@ -149,6 +173,8 @@ const SubtitleInput = ({docId, videoFileUrl, subtitleFileUrl, subtitles, addSubt
           />:
           <input
             type="number"
+            max={60}
+            min={0}
             value={endminutes}
             onChange={(e) => setEndminutes(e.target.value)}
             placeholder="05"
@@ -157,9 +183,11 @@ const SubtitleInput = ({docId, videoFileUrl, subtitleFileUrl, subtitles, addSubt
 
           <input
             type="number"
+            max={60}
+            min={0}
             value={endseconds}
             onChange={(e) => setEndseconds(e.target.value)}
-            placeholder="09"
+            placeholder="9"
             className='endtime-input-item time-inputs'
           />
         </div>

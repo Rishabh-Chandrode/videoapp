@@ -31,17 +31,14 @@
     scrollbar-width: none;  /* Firefox */
   }
 
-.user-outputs{
-   
-
-}
-
 
 
 .app-right{
     width: 30%;
     box-sizing: border-box;
     padding: 30px 10px;
+    overflow-y: scroll  ;
+    max-height: 100%;
 
 }
 

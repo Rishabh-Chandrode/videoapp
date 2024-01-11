@@ -6,6 +6,7 @@ const { Video } = require('./models/models');
 var admin = require("firebase-admin");
 
 const { privateKey } = JSON.parse(process.env.private_key);
+
 var serviceAccount = 
 {
     "type": process.env.type ,
@@ -42,7 +43,7 @@ app.use(bodyParser.json());
 
 
 const mongoURI = process.env.MONGO_URL;
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURI);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => console.log('Connected to MongoDB'));
